@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Post an Image</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src ="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <script>
+            var loadFile = function(event) {
+                    var image = document.getElementById('output');
+                    image.src = URL.createObjectURL(event.target.files[0]);
+                    var file = document.getElementById('file');
+                    file.value = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
+    </head>
+    <body style = "background: #654ea3; background: linear-gradient(to right, #e96443, #904e95);">
+        <br/>
+        <div class="card" style = "background: #654ea3; background: linear-gradient(to right, #e96443, #904e95);">
+            <center>
+            <div class="row" style="margin:150px 300px; padding: 5px;border: 1px solid grey;background-color: white;">
+                <div class="col-2">
+                    <img id="output" src ="https://cdn.iconscout.com/icon/free/png-512/avatar-367-456319.png" height = "200" width="200" style ="padding: 20px; align:center;" class = "rounded-circle"/>   
+                    <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none; align:center"><label for="file" class ="btn-primary btn-block" style="cursor: pointer;">Upload Profile Picture</label>
+                </div>
+                <div class="col-10">
+                    <div class="comment-box ml-2" style = "padding:15px; margin:5px;">
+                        <h4>Post an Image</h4>
+                        <div class="comment-area" style = "margin:10px;"> <textarea class="form-control" placeholder="what is your caption?" rows="4"></textarea> </div>
+                        <div class="comment-btns mt-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="pull-left"> <button class="btn btn-success btn-sm">Cancel</button> </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="pull-right"> <button class="btn btn-success send btn-sm">Post <i class="fa fa-long-arrow-right ml-1"></i></button> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+           </center>  
+        </div>
+    </body>
+</html>

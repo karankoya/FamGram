@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login/Sign Up    </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src ="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            var loadFile = function(event) {
+                    var image = document.getElementById('output');
+                    image.src = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
+        <link rel = "stylesheet" href ="CSS/style.css">
+    </head>
+    <body>
+        <!-- Login and Registration Page -->
+        <section class = "loginUp">
+            <div class="row">
+                <div class="col-md-6 mx-auto p-0">
+                    <div class="card">
+                        <div class="login-box">
+                            <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                                <div class="login-space">
+                                    <form action ="Login" method = "POST">
+                                        <div class="login">
+                                            <div class="group"> <label for="user" class="label">Username</label> <input id="user" name ="name" type="text" class="input" placeholder="Enter your username"> </div>
+                                            <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" name="pwd" type="password" class="input" data-type="password" placeholder="Enter your password"> </div>
+                                            <div class="group"> <input type="submit" class="button" value="Sign In"> </div>
+                                            <div class="hr"></div>
+                                            <div class="foot"> <a href="#">Forgot Password?</a> </div>
+                                        </div>
+                                    </form>
+                                    <form action ="SignUp" method = "POST">
+                                        <div class="sign-up-form">
+                                            <div class = "group"><center><img id="output" src = "https://image.flaticon.com/icons/png/512/2945/2945467.png" height = "200" width="200" class = "rounded-circle"/></center></div>
+                                            <div class="group"><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"><label for="file" style="cursor: pointer;" class="btn-outline-success">Upload Picture</label></div>
+                                            <div class="group"> <label for="user" class="label">Username</label> <input id="user" name = "name" type="text" class="input" placeholder="Create your Username"> </div>
+                                            <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" name = "pwd" type="password" class="input" data-type="password" placeholder="Create your password"> </div>
+                                            <div class="group"> <label for="pass" class="label">Repeat Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Repeat your password"> </div>
+                                            <div class="group"> <label for="pass" class="label">Email Address</label> <input id="pass" name = "email" type="text" class="input" placeholder="Enter your email address"> </div>
+                                            <div class="group"> <input type="submit" class="button" value="Sign Up"> </div>
+                                            <div class="hr"></div>
+                                            <div class="foot"> <label for="tab-1">Already Member?</label> </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
